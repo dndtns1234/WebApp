@@ -1,55 +1,49 @@
-body { 
-	background-color: #1D2475;
-	font-family: Verdana;
-  	color: #939396;	
-	background-image: url("https://selab.hanyang.ac.kr/courses/cse326/2019/labs/images/2/cse326bg.jpg");
-	background-repeat: no-repeat;
-	background-position: top right;
+body {
+  font-family: Verdana;
+  background-color: #1D2475;
+  color : #939396;
+  background-image: url("https://selab.hanyang.ac.kr/courses/cse326/2019/labs/images/2/cse326bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
-a  { color: #FF4F4F; }
-a:link {text-decoration: none;}
-a:visited { text-decoration: none; }
-a:hover  { text-decoration: underline; } 
+h1, h2 {color : #F7931E;}
 
-dt { 
-	font-weight: bold; 
-	color: #FFF86B;
+h1 {
+  font-size: 40px;
+  text-shadow: 3px -3px green;
 }
 
-ul  { 
-	text-align: justify; 
-	list-style-type: square;
-} 
+dt, dd{ font-size: 70%; }
 
-ol  { 
-	text-align: justify; 
-} 
-dd { font-size: 70%; }
+strong { color : #FFF86B; }
 
-q { color: #D1DFEB; }
-
-blockquote { text-align: left; }
+dt{
+  color : #FFF86B;
+  font-weight: bold;
+}
 
 p:first-letter {
-	font-weight: bold;
-	font-size: 150%;
+  font-weight: bold;
+  font-size: 150%;
 }
 
-h1 { 
-	color: #F7931E;
-	font-size: 40px;
-	text-shadow: 3px -3px green;
-}
+a {
+  color : #FF4F4F;
+  text-decoration: none;}
+a:hover { text-decoration: underline; }
 
-h2 { color: #F7931E }
+q{ color : #D1DFEB };
 
-#emp { color: #FFF86B; }
-#ddd {
-	border-width : medium thick; 
-	border-color : #F7931E;
-	border-style : ridge;
-}
+blockquote, ul, ol {text-align: left;}
 
 table, td, th { border: dotted; }
 table { border-collapse: collapse; }
+
+ul { list-style-type: square; }
+
+img {
+  border-width : medium thick;
+  border-color : #F7931E;
+  border-style : ridge;
+}
