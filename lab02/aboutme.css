@@ -37,8 +37,10 @@ q{ color : #D1DFEB };
 
 blockquote, ul, ol {text-align: left;}
 
-table, td, th { border: dotted; }
-table { border-collapse: collapse; }
+table, tr, td, th {
+  border: dotted;
+  border-collapse: collapse;
+}
 
 ul { list-style-type: square; }
 
