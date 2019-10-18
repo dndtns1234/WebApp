@@ -10,7 +10,7 @@ h1 {
   text-align: center;
   font-size: 24pt;
   font-weight: bold;
-  font-family: tahoma;
+  font-family: "Verdana", "Tahoma", sans-serif;
   text-shadow: 3px 3px #999999;
 }
 
@@ -33,7 +33,7 @@ h1 {
 .section1{
   background-color: #A2B964;
   font-size: 8pt;
-  font-family: sans-serif;
+  font-family: "Verdana", "Tahoma", sans-serif;
   float: right;
   width: 250px;
 }
@@ -47,12 +47,19 @@ h1 {
   color: red;
   font-size: 48pt;
   font-weight: bold;
+}
+
+.rotten img {
+  vertical-align: bottom;
   height: 83px;
 }
 
 .review {
+  margin-bottom: 20pt;
+}
+
+.review p:first-child{
   font-weight: bold;
-  font-size: 8pt;
   background-color: #E8DC9B;
   border: 2px solid gray;
   border-radius: 10px;
@@ -60,38 +67,28 @@ h1 {
   overflow: hidden;
 }
 
-.review img {
+.review p:first-child img {
   float: left;
   margin-right: 5px;
 }
 
-.reviewer {
-  margin-bottom: 20pt;
+.review p:last-child{
   overflow: hidden;
+}
+
+.review p:last-child img {
+  float: left;
+  margin-right: 5px;
 }
 
 .inline {
   font-style: italic;
 }
 
-.reviewer img {
-  float: left;
-}
-
-.article1 {
+.article {
   float: left;
   margin-left: 2%;
   width: 47%
-}
-
-.article2 {
-  float: right;
-  margin-right: 2%;
-  width: 47%;
-}
-
-.rotten img {
-  vertical-align: bottom;
 }
 
 dl {
