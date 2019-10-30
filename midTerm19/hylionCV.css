@@ -1,0 +1,156 @@
+/*
+	name : choiwoongsonn
+	student id : 2012042212
+*/
+
+nav img {
+  height: 50px;
+  width: 50px;
+}
+
+body{
+  background-color: black;
+  font-family: sans-serif;
+  color: #939396;
+}
+
+#page {
+  background-color: #3F3D42;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  height: 90vh;
+  min-height: 550px;
+}
+
+nav {
+  float: left;
+  width: 85px;
+  height: 90vh;
+  min-height: 550px;
+}
+
+nav ul{
+  padding: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul li {
+  height: 64px;
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li img {
+  padding: 5px;
+}
+
+nav ul li img:hover {
+  border: 2px solid #F7931E;
+  border-radius: 30px;
+}
+
+.photo {
+  width: 450px;
+  height: 90vh;
+  margin-right: 20px;
+  margin-left: 85px;
+  background-image: url("imgs/HYLion.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.photo h1 {
+  text-align: center;
+  width: 450px;
+  position: relative;
+  top: 72%;
+  font-size: 50pt;
+  color: white;
+  padding-top: 10px;
+  background-color: rgb(63, 61, 66);
+  opacity: 0.75;
+  text-shadow: 2px 2px #3F3D42;
+}
+
+article {
+  height: 90vh;
+  overflow: auto;
+  margin-right: 20px;
+}
+
+article section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+section h2 {
+  color: white;
+}
+
+article hr {
+  border: 2px solid #939396;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#about p {
+  color: #E7931E;
+  margin-left: 20px;
+}
+
+.eduexp {
+  width: 250px;
+  margin-left: 20px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.eduexp p {
+  margin: 5px;
+}
+
+.eduexp img {
+  float: right;
+  opacity: 0.7;
+  margin: 5px;
+}
+
+#lang {
+  overflow: hidden;
+}
+.langg {
+  width: 100px;
+  text-align: center;
+  float: left;
+}
+
+.expp p:first-child {
+  font-size: smaller;
+  color: #F7931E
+}
+
+.expp p:nth-child(4){
+  font-size: smaller;
+}
+
+.eduu  p:first-child {
+  font-size: smaller;
+  color: #F7931E
+}
+
+.eduu p:nth-child(3){
+  font-size: smaller;
+}
+
+.eduu p:nth-child(2){
+  color: white;
+}
+
+.expp p:nth-child(2){
+  color: white;
+}
