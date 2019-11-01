@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-	<!-- 1. sprintf 함수를 이용하여 0을 나타대도 되는지??
-	    2. get param 의 default값을 if 문을 이용하여 해도 되는지?
-			3. download 하는법 모르겠다.
-			4. ex6 주석처리하라고 한 이유
- -->
 	<head>
 		<title>Music Library</title>
 		<meta charset="utf-8" />
@@ -66,20 +61,22 @@
 			<h2>My Music and Playlists</h2>
 			<?php
 				$listitems = array();
+				$filesize = array();
 				$listcount = 0;
 				foreach (glob("lab5\musicPHP\songs\*.mp3") as $filename) {
 					$listitems[$listcount++] = $filename;
+					$filesize[$listcount++] = filesize($filename);
 				}
-				rsort($listitems);
+				array_multisort($filesize, $listitems);
 			?>
 			<ul id="musiclist">
 					<?php
-						foreach ($listitems as $sortfilename) {
+						foreach (array_reverse($listitems) as $sortfilename) {
 						$size = filesize($sortfilename);
 					?>
 					<li class="mp3item">
 							<a href="lab5/musicPHP/songs/<?= basename($sortfilename) ?>"><?= basename($sortfilename) ?></a>
-							(<?=(int)($size / 1000)?>KB)
+							(<?=(int)($size / 1024)?>KB)
 					</li>
 					<?php }	?>
 
