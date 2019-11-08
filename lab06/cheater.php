@@ -27,7 +27,7 @@
 		<?php
 		# Ex 5 :
 		# Check if the name is composed of alphabets, dash(-), ora single white space.
-	} elseif (!preg_match('/[a-zA-Z]/', $_POST["name"])) {
+	} elseif (!preg_match('/^[a-zA-Z]+(([ -][a-zA-Z ])?[a-zA-Z]*)*$/', $_POST["name"])) {
     ?>
 			<h1>Sorry</h1>
 			<p>You didn't provide a valid name. <a href="gradestore.html">Try again?</a></p>
@@ -42,7 +42,7 @@
 		# Ex 5 :
 		# Check if the credit card number is composed of exactly 16 digits.
 		# Check if the Visa card starts with 4 and MasterCard starts with 5.
-			} elseif (!preg_match('/^[4][0-9]{15}/', $_POST["credit"]) && $_POST["cc"] == "visa" || !preg_match('/^[5][0-9]{15}/', $_POST["credit"]) && $_POST["cc"] == "mastercard") {
+	} elseif (!preg_match('/^[4][0-9]{15}$/', $_POST["credit"]) && $_POST["cc"] == "visa" || !preg_match('/^[5][0-9]{15}$/', $_POST["credit"]) && $_POST["cc"] == "mastercard") {
 		?>
 
 			<h1>Sorry</h1>
@@ -79,7 +79,12 @@
 			 * Save the submitted data to the file 'loosers.txt' in the format of : "name;id;cardnumber;cardtype".
 			 * For example, "Scott Lee;20110115238;4300523877775238;visa"
 			 */
-			 file_put_contents($filename, $_POST["name"].";".$_POST["id"].";".$_POST["credit"].";".$_POST["cc"]."\n", FILE_APPEND);
+			 if (file_get_contents($filename,true) == ""){
+				 	file_put_contents($filename, $_POST["name"].";".$_POST["id"].";".$_POST["credit"].";".$_POST["cc"]."\n", FILE_APPEND);
+			 }else{
+				 file_put_contents($filename,"\n". $_POST["name"].";".$_POST["id"].";".$_POST["credit"].";".$_POST["cc"]."\n", FILE_APPEND);
+			 }
+
 		?>
 
 		<!-- Ex 3: Show the complete contents of "loosers.txt".
