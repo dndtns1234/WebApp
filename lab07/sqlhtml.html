@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>sqlhtml</title>
+		<link href="https://selab.hanyang.ac.kr/courses/cse326/2019/labs/labResources/gradestore.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<form action="database.php" method="post">
+
+			DB name: <input type="text" name="dbname" value = "simpsons"/>
+			SQL query: <input type="text" name="query" value ="select name, grade from grades join students on course_id = (select id from courses where name = 'Computer Science 143') and grade < 'B-' and student_id = id;" />
+
+			<div id="submitbutton">
+				<!-- create submit button here -->
+				<input type="submit" value="submit" />
+			</div>
+		</form>
+
+	</body>
+</html>
