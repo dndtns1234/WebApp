@@ -105,16 +105,87 @@ show tables; // database 내 table 확인
 
 imdb
 
-select * from roles where role like '%Pi%'; // not 28 row but 26 row
-select first_name, last_name from actors join roles on actors.id = roles.actor_id and roles.role like '%Pi%';
-//////select first_name, last_name from actors join roles on roles.role = Kill Bill: Vol.1;
+select r.role 
+from roles r 
+join movies m on m.id = r.movie_id
+ where m.name = 'Pi';
+
+
+
+select a.first_name, a.last_name, r.role 
+
+from actors a
+
+join roles r on r.actor_id = a.id
+
+join movies m on m.id = r.movie_id
+
+where m.name = 'Pi';
+
+select a.first_name, a.last_name
+
+from actors a
+
+join roles r1 on r1.actor_id = a.id
+
+join roles r2 on r2.actor_id = a.id
+
+join movies m1 on m1.id = r1.movie_id
+
+join movies m2 on m2.id = r2.movie_id
+
+where m1.name = 'Kill Bill: Vol. 1'
+and m2.name = 'Kill Bill: Vol. 2';
+
 select actor_id, count(*) from roles group by actor_id order by count(*) desc limit 7;
 select genre, count(*) from movies_genres group by genre order by count(*) desc limit 3;
-//////어렵다
+
+select d.first_name, d.last_name
+
+from directors d
+
+join movies_directors md on d.id = md.director_id
+
+join movies m on md.movie_id = m.id
+
+join movies_genres mg on m.id = mg.movie_id
+
+where mg.genre = 'Thriller'
+
+group by d.id
+
+order by count(m.id) desc
+
+limit 1;
 
 simpsons
 
 select * from grades where course_id = (select id from courses where name = 'Computer Science 143');
+
 select name, grade from grades join students on course_id = (select id from courses where name = 'Computer Science 143') and grade < 'B-' and student_id = id;
-////////
-//////////
+
+select s.name, c.name, g.grade
+
+from students s
+
+join grades g on g.student_id = s.id
+
+join courses c on c.id = g.course_id
+
+where g.grade <= 'B-'
+order by s.name;
+
+
+
+select DISTINCT c.name
+from courses c
+
+join grades g1 on g1.course_id = c.id
+
+join students s1 on g1.student_id = s1.id
+
+join grades g2 on g2.course_id = c.id
+
+join students s2 on g2.student_id = s2.id
+
+where s1.id < s2.id;
