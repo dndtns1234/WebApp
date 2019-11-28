@@ -34,7 +34,7 @@ function overBoundary(event) {
 // sets the maze back to its initial playable state
 function startClick() {
 	loser = 0;
-	$("status").innerHTML = "Move your mouse over the 'S' to begin.";
+	$("status").innerHTML = "Move your mouse to 'E' without touching any walls";
 	var boundaries = $$("#maze div.boundary");
 	for (var i = 0; i < boundaries.length; i++) {
 			boundaries[i].style.backgroundColor = "#eeeeee";
