@@ -6,28 +6,28 @@
 var loser = null;  // whether the user has hit a wall
 
 window.onload = function() {
-	var boundaries = $$("#maze div.boundary");
-	for (var i = 0; i < boundaries.length; i++) {
-			boundaries[i].onmouseover = overBoundary;
+	var boundaries = $$(".boundary");
+	for (var i = 0; i < boundaries.length; i++){
+		boundaries[i].observe("mouseover", overBoundary);
 	}
-	$("start").onclick = startClick;
-	$("end").onmouseover = overEnd;
-  $("maze").onmouseleave = overBody;
-
+	$("end").observe("mouseover", overEnd);
+  $("maze").observe("mouseleave", overBody);
+	$("start").observe("click", startClick);
 };
 
 // called when mouse enters the walls;
 // signals the end of the game with a loss
 function overBoundary(event) {
-	var boundaries = $$("#maze div.boundary");
 	if (loser == 0){
-		for (var i = 0; i < boundaries.length; i++) {
-				//boundaries[i].addClassName("div.youlose");
-				boundaries[i].style.backgroundColor = "#ff8888";
+		var boundaries = $$(".boundary");
+		for (var i = 0; i < boundaries.length; i++){
+			boundaries[i].addClassName("youlose");
 		}
 		$("status").innerHTML = "You lose! :(";
 	}
-	loser = 1;
+
+	loser = true;
+	event.stop();
 }
 
 // called when mouse is clicked on Start div;
@@ -35,9 +35,9 @@ function overBoundary(event) {
 function startClick() {
 	loser = 0;
 	$("status").innerHTML = "Move your mouse to 'E' without touching any walls";
-	var boundaries = $$("#maze div.boundary");
+	var boundaries = $$(".boundary");
 	for (var i = 0; i < boundaries.length; i++) {
-			boundaries[i].style.backgroundColor = "#eeeeee";
+			boundaries[i].removeClassName("youlose");
 	}
 }
 
@@ -45,7 +45,7 @@ function startClick() {
 // signals the end of the game with a win
 function overEnd() {
 	if (loser == 0){
-		$("status").innerHTML = "You win! :)";
+			$("status").innerHTML = "You win! :)";
 	}
 	loser = 1;
 }
@@ -53,13 +53,13 @@ function overEnd() {
 // test for mouse being over document.body so that the player
 // can't cheat by going outside the maze
 function overBody(event) {
-	var boundaries = $$("#maze div.boundary");
 	if (loser == 0){
-		for (var i = 0; i < boundaries.length; i++) {
-				//boundaries[i].addClassName("div.youlose");
-				boundaries[i].style.backgroundColor = "#ff8888";
+		var boundaries = $$(".boundary");
+		for (var i = 0; i < boundaries.length; i++){
+			boundaries[i].addClassName("youlose");
 		}
 		$("status").innerHTML = "You lose! :(";
 	}
-	loser = 1;
+	loser = true;
+	event.stop();
 }
